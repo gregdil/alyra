@@ -1,8 +1,6 @@
 # Tests sur contrat "Voting"
 
-Test portant sur le contrat "voting.sol" originaire de la correction. Aucune modofication apporté.
-
-Tests fait dans l'ordre chronologique des fonctions et de leurs déroulement interne.
+Test portant sur le contrat "voting.sol" 
 ___
 
 ## Nombre de test effectué : 35
