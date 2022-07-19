@@ -17,8 +17,7 @@ export default class Voters extends React.Component {
             if (this.props.workflowStatus === '0') {
                 return <div className="row">
                             <div className="col-lg-12">
-                                <h1 className='display-5 fw-bold'>Ajouter des Voters</h1>
-                                <hr className="text-success border-2 opacity-50"></hr>
+                                <h3>Ajouter des Voters :</h3>
                             </div>
                             <div className="col-lg-12">
                                 <div className="form-group">
@@ -41,7 +40,6 @@ export default class Voters extends React.Component {
                 return <div className="row">
                     <div className="col-lg-12">
                         <h3>Liste des Voters</h3>
-                        <hr className="text-success border-2 opacity-50"></hr>
                     </div>
                     <div className="col-lg-12">
                         <table className="table table-striped">
@@ -65,8 +63,7 @@ export default class Voters extends React.Component {
             }else{
                 return <div className="row">
                             <div className="col-lg-12">
-                                <h1 className='display-5 fw-bold'>Liste des Voters</h1>
-                                <hr className="text-success border-2 opacity-50"></hr>
+                                <h3>Liste des Voters</h3>
                             </div>
                             <div className="alert alert-info" role="alert">Il n'y a aucun incrit</div>
                         </div>

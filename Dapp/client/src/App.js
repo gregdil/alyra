@@ -96,33 +96,27 @@ class App extends Component {
   
 
     updateVoters= async () => {
-        console.log("fdddf");
-        console.log(this.state.isOwner);
-        if(this.state.isOwner === true){
+       // if(this.state.isOwner === true){
             let voterEventsList = await this.state.contract.getPastEvents('VoterRegistered', {fromBlock: 0,toBlock: 'latest'});
-            console.log("eth1 UpadteVoters ");
-            console.log(voterEventsList);
             const Voter = [];
             voterEventsList.map( (voter) => (
                 Voter.push(voter.returnValues.voterAddress.toString())
             ));
             this.setState({ Voter });
-        }
+      //  }
     };
 
     updateRoles = async () => {
         const isOwner = (this.state.accounts[0] === this.Owner);
-        console.log(isOwner);
-        console.log(this.state.accounts[0] + " => "+ this.Owner);
         this.setState({ isOwner });
+        console.log(this.state.Voter);
         const isVoter = this.state.Voter.includes(this.state.accounts[0]);
-        console.log(this.state.accounts[0] + " => " + isVoter)
+        console.log(isVoter);
         this.setState({ isVoter });
     };
 
     updateProposalList = async () => {
-        console.log("ETH1 updateProposalList");
-        console.log("ISVoter : " + this.state.isVoter);
+        console.log("ETH1" + this.state.isVoter);
         if (this.state.isVoter) {
             let proposalEventsList = await this.state.contract.getPastEvents('ProposalRegistered', {fromBlock: 0,toBlock: 'latest'});
             let proposalCount = proposalEventsList.length;

@@ -84,22 +84,51 @@ export default class Status extends React.Component {
     render(){
         return(
             <div className="container-sm" id='status'>
-                 <div className="row">
-                    <div className="col-lg-12">
-                        <h1 className='display-5 fw-bold'>Vos information</h1>
-                        <hr className="text-success border-2 opacity-50"></hr>
-                    </div>
-                    
-                </div>
                 <div className="row">
-                    <div className="col-4">
-                        {this.props.isVoter ? <div className="alert alert-success" role="alert">Vous etes bien inscrit</div> : <div className="alert alert-danger" role="alert">Vous n'êtes pas encore enregistrer</div>}
+                    <div className="col-lg-12">
+                        <div className="d-flex align-items-center p-3 my-3 text-white rounded shadow-sm" style={{backgroundColor:"#6f42c1"}}>
+                            <div className="lh-1">
+                                <h1 className="h6 mb-0 text-white lh-1">Dapp Voting</h1>
+                            </div>
+                        </div>
                     </div>
-                    <div className="col-4">
-                        <div className="alert alert-success" role="alert">{this.checkWorkFlowStatus(this.props.workflowStatus)} </div>
+                </div>
+
+                <div className="row">
+                    <div className="col-lg-8">
+                        <div className="my-3 p-3 bg-body rounded shadow-sm">
+                            <h6 className="border-bottom pb-2 mb-0">Vos information</h6>
+                            <div className=" text-muted pt-3">
+                                <p className="pb-3 mb-0 small lh-sm border-bottom">
+                                    <strong className="d-block text-gray-dark">Votre Adresse : </strong>
+                                    {this.props.address}
+                                </p>
+                            </div>
+                            <div className="text-muted pt-3">
+                                <p className="pb-3 mb-0 small lh-sm border-bottom">
+                                    <strong className="d-block text-gray-dark">Votre status :</strong>
+                                    {this.props.isVoter ? <div className='text-error'>Vous etes bien inscrit au systeme de vote</div> : <div className='text-error'>Vous n'êtes pas encore enregistrer </div>}
+                                </p>
+                            </div>
+
+                        </div>
                     </div>
-                    <div className="col-4">
-                        {this.changeStatus()}
+                    <div className="col-lg-4">
+                        <div className="my-3 p-3 bg-body rounded shadow-sm">
+                            <h6 className="border-bottom pb-2 mb-0">Statut du Systeme</h6>
+                            <div className=" text-muted pt-3">
+                                <p className="pb-3 mb-0 small lh-sm border-bottom">
+                                    <strong className="d-block text-gray-dark">Statut Actuel : </strong>
+                                    {this.checkWorkFlowStatus(this.props.workflowStatus)}
+                                </p>
+                            </div>
+                            <div className="text-muted pt-3 text-center">
+                                <p className="pb-3 mb-0 small lh-sm border-bottom">
+                                    {this.changeStatus()}
+                                </p>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
